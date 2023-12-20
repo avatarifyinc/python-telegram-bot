@@ -151,6 +151,7 @@ class HTTPXRequest(BaseRequest):
         limits = httpx.Limits(
             max_connections=connection_pool_size,
             max_keepalive_connections=connection_pool_size,
+            keepalive_expiry=120,
         )
 
         if http_version not in ("1.1", "2", "2.0"):
